@@ -1,0 +1,99 @@
+println("${project.name}: Applying external gradle script from publish-android.gradle")
+
+// This block will rename aar output.
+android.libraryVariants.all { variant ->
+    variant.outputs.all { output ->
+        if (outputFileName.endsWith('.aar')) {
+            def newName
+            if (variant.buildType.name == 'release') {
+                newName = "${project.artifactId}-${project.versionName}.aar"
+            } else {
+                newName = "${project.artifactId}-${variant.buildType.name}-${project.versionName}.aar"
+            }
+            println("Rename output from $outputFileName to $newName")
+            outputFileName = newName
+        }
+    }
+}
+
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            artifact("$buildDir/outputs/aar/${project.artifactId}-${project.versionName}.aar")
+            afterEvaluate {
+                // In Gradle 5.0, sourcesJar and javadocJar is created later than publish task, So we put them in
+                // afterEvaluate block.
+                // https://docs.gradle.org/current/userguide/publishing_maven.html#publishing_maven:deferred_configuration
+                artifact sourcesJar
+                artifact javadocJar
+            }
+
+            // Mandatory pom fields
+            groupId rootProject.project_group_id
+            artifactId project.artifactId
+            version project.versionName
+
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                // Iterate over the dependencies (we don't want the test ones), adding a <dependency> node for each
+                configurations.implementation.allDependencies.each {
+                    // Ensure dependencies such as fileTree are not included.
+                    if (it.name != 'unspecified') {
+                        println("Manually appending dependency (implementation): $it.group:$it.name")
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', it.group)
+                        dependencyNode.appendNode('artifactId', it.name)
+                        dependencyNode.appendNode('version', it.version)
+                        dependencyNode.appendNode('scope', 'runtime')
+                    }
+                }
+                configurations.api.allDependencies.each {
+                    // Ensure dependencies such as fileTree are not included.
+                    if (it.name != 'unspecified') {
+                        println("Manually appending dependency (api): $it.group:$it.name")
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', it.group)
+                        dependencyNode.appendNode('artifactId', it.name)
+                        dependencyNode.appendNode('version', it.version)
+                        dependencyNode.appendNode('scope', 'compile')
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name "nexus"
+            credentials {
+                username "admin"
+                password "admin123"
+            }
+            url = project.versionName.endsWith('SNAPSHOT') ? rootProject.snapshot_repository_url : rootProject.release_repository_url
+        }
+    }
+}
+
+// By default the output directory is /build/libs
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    description = "Assemble jar with both java and kotlin sources from src/main/java"
+    classifier = 'sources'
+    baseName = project.artifactId
+    version = project.versionName
+}
+
+// By default the output directory is /build/libs
+task javadocJar(type: Jar) {
+    from tasks.dokka
+    description = "Assemble both java and kotlin docs"
+    classifier = 'javadoc'
+    baseName = project.artifactId
+    version = project.versionName
+}
+
+//signing {
+//    sign publishing.publications.MyPublication
+//}

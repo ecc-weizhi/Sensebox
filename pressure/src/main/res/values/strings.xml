@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pressure_display_name">Pressure</string>
+    <string name="pressure_raw_data_title">Raw data</string>
+    <string name="pressure_raw_data_subtitle">Ambient air temperature</string>
+</resources>

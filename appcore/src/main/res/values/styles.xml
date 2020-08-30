@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="appcore_AppTheme" parent="appcore_Base.V0.AppTheme" />
+    <!-- Create a base style Base.V0.AppTheme. This will be where we will be placing all our -->
+    <!-- non api level specific attributes. Naming convention v0 means that these attributes -->
+    <!-- has min api level 0 -->
+    <style name="appcore_Base.V0.AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Non api level specific attributes -->
+        <item name="colorPrimary">@color/appcore_blue_500</item>
+        <item name="colorPrimaryDark">@color/appcore_blue_700</item>
+        <item name="colorAccent">@color/appcore_pink_500</item>
+        <item name="android:windowBackground">@color/appcore_white</item>
+    </style>
+</resources>

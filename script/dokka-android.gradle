@@ -1,0 +1,29 @@
+println("${project.name}: Applying external gradle script from dokka-android.gradle")
+
+apply plugin: 'org.jetbrains.dokka-android'
+
+dokka {
+    moduleName = 'data'
+    outputFormat = 'html'
+    outputDirectory = "${buildDir}/javadoc"
+
+    jdkVersion = rootProject.jdkVersion // Used for linking to JDK
+
+    cacheRoot = 'default'
+
+    // Use to include or exclude non public members.
+    includeNonPublic = false
+
+    // Do not output deprecated members. Applies globally, can be overridden by packageOptions
+    skipDeprecated = false
+
+    // Emit warnings about not documented members. Applies globally, also can be overridden by packageOptions
+    reportUndocumented = true
+
+    skipEmptyPackages = true // Do not create index pages for empty packages
+
+    impliedPlatforms = ["JVM"] // See platforms section of documentation
+
+    // No default documentation link to kotlin-stdlib
+    noStdlibLink = false
+}

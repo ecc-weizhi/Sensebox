@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/appcore_rounded_rectangle_white"
+    android:elevation="@dimen/appcore_elevation_normal"
+    android:padding="@dimen/appcore_margin_normal">
+
+    <TextView
+        android:id="@+id/rawDataTitleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/orientation_raw_data_title"
+        android:textColor="@color/appcore_black_87"
+        android:textSize="@dimen/appcore_text_biggest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rawDataSubtitleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/orientation_raw_data_subtitle"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_bigger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rawDataTitleView" />
+
+    <TextView
+        android:id="@+id/azimuthLabelView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/appcore_margin_normal"
+        android:text="@string/orientation_azimuth"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rawDataSubtitleView" />
+
+    <TextView
+        android:id="@+id/pitchLabelView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/orientation_pitch"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/azimuthLabelView" />
+
+    <TextView
+        android:id="@+id/rollLabelView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/orientation_roll"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pitchLabelView" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/labelBarrierView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="azimuthLabelView,pitchLabelView,rollLabelView" />
+
+    <TextView
+        android:id="@+id/azimuthRawDataView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/appcore_margin_normal"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:maxLines="1"
+        android:minLines="1"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/azimuthLabelView"
+        app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+        tools:text="9.81" />
+
+    <TextView
+        android:id="@+id/pitchRawDataView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/appcore_margin_normal"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:maxLines="1"
+        android:minLines="1"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/pitchLabelView"
+        app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+        tools:text="9.81" />
+
+    <TextView
+        android:id="@+id/rollRawDataView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/appcore_margin_normal"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:maxLines="1"
+        android:minLines="1"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/rollLabelView"
+        app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+        tools:text="9.81" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/dataBarrierView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="azimuthRawDataView,pitchRawDataView,rollRawDataView" />
+
+    <TextView
+        android:id="@+id/azimuthUnitView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:minLines="1"
+        android:text="@string/appcore_degree"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/azimuthRawDataView"
+        app:layout_constraintStart_toEndOf="@id/dataBarrierView" />
+
+    <TextView
+        android:id="@+id/pitchUnitView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:minLines="1"
+        android:text="@string/appcore_degree"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/pitchRawDataView"
+        app:layout_constraintStart_toEndOf="@id/dataBarrierView" />
+
+    <TextView
+        android:id="@+id/rollUnitView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:minLines="1"
+        android:text="@string/appcore_degree"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/rollRawDataView"
+        app:layout_constraintStart_toEndOf="@id/dataBarrierView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

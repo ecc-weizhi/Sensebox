@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gravity_display_name">Gravity</string>
+    <string name="gravity_raw_data_title">Raw data</string>
+    <string name="gravity_raw_data_subtitle">Force of gravity along axis</string>
+    <string name="gravity_axis_x">x axis:</string>
+    <string name="gravity_axis_y">y axis:</string>
+    <string name="gravity_axis_z">z axis:</string>
+</resources>

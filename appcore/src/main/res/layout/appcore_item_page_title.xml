@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/appcore_margin_big"
+    android:paddingBottom="@dimen/appcore_margin_big"
+    android:textColor="@color/appcore_black_87"
+    android:textSize="@dimen/appcore_text_hugest"
+    android:textStyle="bold"
+    tools:text="Accelerometer" />

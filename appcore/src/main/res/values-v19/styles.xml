@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="appcore_AppTheme" parent="appcore_Base.V19.AppTheme" />
+
+    <style name="appcore_Base.V19.AppTheme" parent="appcore_Base.V0.AppTheme">
+        <!-- API 19 specific attributes -->
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+</resources>

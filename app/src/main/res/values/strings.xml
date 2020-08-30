@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sense Box</string>
+
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
+    <string name="content_description_navigation_icon">Navigation icon</string>
+    <string name="search">Search for sensors</string>
+
+    <string name="navigation_home">Home</string>
+    <string name="navigation_about">About Sense Box</string>
+    <string name="navigation_settings">Settings</string>
+</resources>

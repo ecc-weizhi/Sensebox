@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rotationvector_display_name">Rotation Vector</string>
+    <string name="rotationvector_raw_data_title">Raw data</string>
+    <string name="rotationvector_raw_data_subtitle">Rotation vector component along axis</string>
+    <string name="rotationvector_axis_x">x axis (x * sin(\u03B8/2)):</string>
+    <string name="rotationvector_axis_y">y axis (y * sin(\u03B8/2)):</string>
+    <string name="rotationvector_axis_z">z axis (z * sin(\u03B8/2)):</string>
+    <string name="rotationvector_scalar">scalar component (cos(\u03B8/2)):</string>
+</resources>

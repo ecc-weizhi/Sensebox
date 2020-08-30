@@ -1,0 +1,102 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+ext {
+    artifactId = "app"
+    versionCode = 1
+    versionName = "1.0"
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion.toInteger()
+    defaultConfig {
+        applicationId "${rootProject.project_group_id}.${project.artifactId}"
+
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode project.versionCode
+        versionName project.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility rootProject.jvmTarget
+        targetCompatibility rootProject.jvmTarget
+    }
+}
+
+// This need to be in each module's build.gradle (not root build.gradle)
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+    implementation project(":appcore")
+    implementation project(":accelerometer")
+    implementation project(":ambienttemperature")
+    implementation project(":gravity")
+    implementation project(":gyroscope")
+    implementation project(":light")
+    implementation project(":linearacceleration")
+    implementation project(":magneticfield")
+    implementation project(":orientation")
+    implementation project(":pressure")
+    implementation project(":proximity")
+    implementation project(":relativehumidity")
+    implementation project(":rotationvector")
+    implementation project(":temperature")
+
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.appcoreVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.accelerometerVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.ambienttemperatureVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.gravityVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.gyroscopeVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.lightVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.linearaccelerationVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.magneticfieldVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.orientationVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.pressureVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.proximityVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.relativehumidityVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.rotationvectorVersion") { changing = true }
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.temperatureVersion") { changing = true }
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    // (see https://github.com/ReactiveX/RxJava/releases for latest 2.x.x version)
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+
+    testImplementation "androidx.test.ext:junit:$rootProject.xJunitVersion"
+    androidTestImplementation "androidx.test:runner:$rootProject.xRunnerVersion"
+}
+
+apply from: "$rootDir/script/dokka-android.gradle"

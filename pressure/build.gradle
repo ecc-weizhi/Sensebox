@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+ext {
+    artifactId = "pressure"
+    versionCode = 1
+    versionName = "1.0-SNAPSHOT"
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion.toInteger()
+    resourcePrefix "${project.artifactId}_"
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode project.versionCode
+        versionName project.versionName
+
+        consumerProguardFiles 'consumer-proguard-rules.pro'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.jvmTarget
+        targetCompatibility rootProject.jvmTarget
+    }
+}
+
+// This need to be in each module's build.gradle (not root build.gradle)
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+    implementation project(":appcore")
+//    implementation("app.eccweizhi.sensebox:appcore:$rootProject.appcoreVersion") { changing = true }
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerviewVersion"
+
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+
+    testImplementation "androidx.test.ext:junit:$rootProject.xJunitVersion"
+
+    androidTestImplementation "androidx.test:runner:$rootProject.xRunnerVersion"
+}
+
+apply from: "$rootDir/script/dokka-android.gradle"
+apply from: "$rootDir/script/publish-android.gradle"

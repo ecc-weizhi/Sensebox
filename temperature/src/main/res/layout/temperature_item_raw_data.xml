@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/appcore_rounded_rectangle_white"
+    android:elevation="@dimen/appcore_elevation_normal"
+    android:padding="@dimen/appcore_margin_normal">
+
+    <TextView
+        android:id="@+id/rawDataTitleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/temperature_raw_data_title"
+        android:textColor="@color/appcore_black_87"
+        android:textSize="@dimen/appcore_text_biggest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rawDataSubtitleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/temperature_raw_data_subtitle"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_bigger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rawDataTitleView" />
+
+    <TextView
+        android:id="@+id/rawDataView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/appcore_margin_normal"
+        android:textColor="@color/appcore_black_87"
+        android:textSize="@dimen/appcore_text_hugest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rawDataSubtitleView"
+        tools:text="31" />
+
+    <TextView
+        android:id="@+id/rawDataUnitView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/appcore_degree_celsius"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_biggest"
+        app:layout_constraintBaseline_toBaselineOf="@id/rawDataView"
+        app:layout_constraintStart_toEndOf="@id/rawDataView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

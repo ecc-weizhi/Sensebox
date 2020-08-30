@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="magneticfield_display_name">Magnetic Field</string>
+    <string name="magneticfield_raw_data_title">Raw data</string>
+    <string name="magneticfield_raw_data_subtitle">Geomagnetic field strength along axis</string>
+    <string name="magneticfield_axis_x">x axis:</string>
+    <string name="magneticfield_axis_y">y axis:</string>
+    <string name="magneticfield_axis_z">z axis:</string>
+</resources>

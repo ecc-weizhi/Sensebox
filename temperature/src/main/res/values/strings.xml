@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="temperature_display_name">Temperature</string>
+    <string name="temperature_raw_data_title">Raw data</string>
+    <string name="temperature_raw_data_subtitle">Device temperature</string>
+</resources>

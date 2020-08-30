@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/appcore_rounded_rectangle_white"
+    android:elevation="@dimen/appcore_elevation_normal"
+    android:padding="@dimen/appcore_margin_normal">
+
+    <TextView
+        android:id="@+id/rawDataTitleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/accelerometer_raw_data_title"
+        android:textColor="@color/appcore_black_87"
+        android:textSize="@dimen/appcore_text_biggest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rawDataSubtitleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/accelerometer_raw_data_subtitle"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_bigger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rawDataTitleView" />
+
+    <TextView
+        android:id="@+id/xAxisLabelView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/appcore_margin_normal"
+        android:text="@string/accelerometer_axis_x"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rawDataSubtitleView" />
+
+    <TextView
+        android:id="@+id/yAxisLabelView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accelerometer_axis_y"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/xAxisLabelView" />
+
+    <TextView
+        android:id="@+id/zAxisLabelView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accelerometer_axis_z"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/yAxisLabelView" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/labelBarrierView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="xAxisLabelView,yAxisLabelView,zAxisLabelView" />
+
+    <TextView
+        android:id="@+id/xAxisRawDataView"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/appcore_margin_normal"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:maxLines="1"
+        android:minLines="1"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/xAxisLabelView"
+        app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+        tools:text="9.81" />
+
+    <TextView
+        android:id="@+id/yAxisRawDataView"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/appcore_margin_normal"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:maxLines="1"
+        android:minLines="1"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/yAxisLabelView"
+        app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+        tools:text="9.81" />
+
+    <TextView
+        android:id="@+id/zAxisRawDataView"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/appcore_margin_normal"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:maxLines="1"
+        android:minLines="1"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/zAxisLabelView"
+        app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+        tools:text="9.81" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/dataBarrierView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="xAxisRawDataView,yAxisRawDataView,zAxisRawDataView" />
+
+    <TextView
+        android:id="@+id/xUnitView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/appcore_margin_normal"
+        android:maxLines="1"
+        android:minLines="1"
+        android:text="@string/appcore_meter_per_second_sq"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/xAxisRawDataView"
+        app:layout_constraintStart_toEndOf="@id/dataBarrierView" />
+
+    <TextView
+        android:id="@+id/yUnitView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/appcore_margin_normal"
+        android:maxLines="1"
+        android:minLines="1"
+        android:text="@string/appcore_meter_per_second_sq"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/yAxisRawDataView"
+        app:layout_constraintStart_toEndOf="@id/dataBarrierView" />
+
+    <TextView
+        android:id="@+id/zUnitView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/appcore_margin_normal"
+        android:maxLines="1"
+        android:minLines="1"
+        android:text="@string/appcore_meter_per_second_sq"
+        android:textColor="@color/appcore_black_54"
+        android:textSize="@dimen/appcore_text_normal"
+        app:layout_constraintBaseline_toBaselineOf="@id/zAxisRawDataView"
+        app:layout_constraintStart_toEndOf="@id/dataBarrierView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

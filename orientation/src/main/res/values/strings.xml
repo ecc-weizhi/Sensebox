@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="orientation_display_name">Orientation</string>
+    <string name="orientation_raw_data_title">Raw data</string>
+    <string name="orientation_raw_data_subtitle">Orientation of device</string>
+    <string name="orientation_azimuth">Azimuth (angle around the z-axis):</string>
+    <string name="orientation_pitch">Pitch (angle around the x-axis):</string>
+    <string name="orientation_roll">Roll (angle around the y-axis):</string>
+</resources>

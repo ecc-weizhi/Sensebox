@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navContainer"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginStart="@dimen/appcore_margin_smaller"
+    android:layout_marginTop="@dimen/appcore_margin_smallest"
+    android:layout_marginEnd="@dimen/appcore_margin_smaller"
+    android:layout_marginBottom="@dimen/appcore_margin_smallest"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/appcore_margin_smaller"
+    android:paddingEnd="@dimen/appcore_margin_smaller"
+    tools:background="@drawable/rounded_rectangle_transparent_bg">
+
+    <ImageView
+        android:id="@+id/navImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_weight="0"
+        tools:srcCompat="@drawable/ic_settings_black_24dp" />
+
+    <TextView
+        android:id="@+id/navTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/appcore_margin_normal"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:minLines="1"
+        android:textSize="@dimen/appcore_text_normal"
+        tools:text="@string/navigation_home"
+        tools:textColor="@color/appcore_black_87" />
+
+</LinearLayout>

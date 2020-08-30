@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ambienttemperature_display_name">Ambient Temperature</string>
+    <string name="ambienttemperature_raw_data_title">Raw data</string>
+    <string name="ambienttemperature_raw_data_subtitle">Ambient air temperature</string>
+</resources>

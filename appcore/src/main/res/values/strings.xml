@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appcore_meter_per_second_sq">m/s\u00B2</string>
+    <string name="appcore_degree_celsius">\u00B0C</string>
+    <string name="appcore_radian_per_second">rad/s</string>
+    <string name="appcore_lux">lx</string>
+    <string name="appcore_hectopascals">hPa</string>
+    <string name="appcore_percent">%</string>
+    <string name="appcore_microtesla">\u00B5T</string>
+    <string name="appcore_degree">\u00B0</string>
+    <string name="appcore_centimeter">cm</string>
+
+    <string name="appcore_missing_sensor_message">This device does not have %1$s sensor</string>
+
+</resources>

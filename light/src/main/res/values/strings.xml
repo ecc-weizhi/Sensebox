@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="light_display_name">Light</string>
+    <string name="light_raw_data_title">Raw data</string>
+    <string name="light_raw_data_subtitle">Illuminance</string>
+</resources>

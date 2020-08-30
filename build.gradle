@@ -1,0 +1,45 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    // Unfortunately we cannot extract this to a external file as this block will be run before
+    // our custom commands can happen.
+    ext.kotlin_version = '1.3.41'
+    ext.dokka_version = '0.9.17'
+
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:${dokka_version}"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+// Find all .properties file in script folder and import them into rootProject.extensions.
+def propertiesFiles = fileTree("$rootDir/script").filter {
+    it.isFile() && it.name.endsWith(".properties")
+}.files.absolutePath
+propertiesFiles.each {
+    println("${project.name}: Loading properties from $it")
+    def temp = new Properties()
+    file(it).withInputStream { temp.load(it) }
+    temp.each { k, v -> rootProject.extensions.add(k, v) }
+}
+
+allprojects {
+    repositories {
+//        maven { url rootProject.release_repository_url }
+//        maven { url rootProject.snapshot_repository_url }
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

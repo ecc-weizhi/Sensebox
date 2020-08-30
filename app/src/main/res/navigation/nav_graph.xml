@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <action
+        android:id="@+id/action_global_aboutFragment"
+        app:destination="@id/aboutFragment"
+        app:popUpTo="@id/homeFragment" />
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_global_settingsFragment"
+        app:destination="@id/settingsFragment"
+        app:popUpTo="@id/homeFragment" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="app.eccweizhi.sensebox.app.ui.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_accelerometerFragment"
+            app:destination="@id/accelerometerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_temperatureFragment"
+            app:destination="@id/temperatureFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rotationVectorFragment"
+            app:destination="@id/rotationVectorFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_relativeHumidityFragment"
+            app:destination="@id/relativeHumidityFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_proximityFragment"
+            app:destination="@id/proximityFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pressureFragment"
+            app:destination="@id/pressureFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_orientationFragment"
+            app:destination="@id/orientationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_magneticFieldFragment"
+            app:destination="@id/magneticFieldFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_linearAccelerationFragment"
+            app:destination="@id/linearAccelerationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_lightFragment"
+            app:destination="@id/lightFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_gyroscopeFragment"
+            app:destination="@id/gyroscopeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_gravityFragment"
+            app:destination="@id/gravityFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_ambientTemperatureFragment"
+            app:destination="@id/ambientTemperatureFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="app.eccweizhi.sensebox.app.ui.about.AboutFragment"
+        android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="app.eccweizhi.sensebox.app.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/accelerometerFragment"
+        android:name="app.eccweizhi.sensebox.accelerometer.ui.AccelerometerFragment"
+        android:label="AccelerometerFragment" />
+    <fragment
+        android:id="@+id/ambientTemperatureFragment"
+        android:name="app.eccweizhi.sensebox.ambienttemperature.ui.AmbientTemperatureFragment"
+        android:label="AmbientTemperatureFragment" />
+    <fragment
+        android:id="@+id/gravityFragment"
+        android:name="app.eccweizhi.sensebox.gravity.ui.GravityFragment"
+        android:label="GravityFragment" />
+    <fragment
+        android:id="@+id/gyroscopeFragment"
+        android:name="app.eccweizhi.sensebox.gyroscope.ui.GyroscopeFragment"
+        android:label="GyroscopeFragment" />
+    <fragment
+        android:id="@+id/lightFragment"
+        android:name="app.eccweizhi.sensebox.light.ui.LightFragment"
+        android:label="LightFragment" />
+    <fragment
+        android:id="@+id/linearAccelerationFragment"
+        android:name="app.eccweizhi.sensebox.linearacceleration.ui.LinearAccelerationFragment"
+        android:label="LinearAccelerationFragment" />
+    <fragment
+        android:id="@+id/magneticFieldFragment"
+        android:name="app.eccweizhi.sensebox.magneticfield.ui.MagneticFieldFragment"
+        android:label="MagneticFieldFragment" />
+    <fragment
+        android:id="@+id/orientationFragment"
+        android:name="app.eccweizhi.sensebox.orientation.ui.OrientationFragment"
+        android:label="OrientationFragment" />
+    <fragment
+        android:id="@+id/pressureFragment"
+        android:name="app.eccweizhi.sensebox.pressure.ui.PressureFragment"
+        android:label="PressureFragment" />
+    <fragment
+        android:id="@+id/proximityFragment"
+        android:name="app.eccweizhi.sensebox.proximity.ui.ProximityFragment"
+        android:label="ProximityFragment" />
+    <fragment
+        android:id="@+id/relativeHumidityFragment"
+        android:name="app.eccweizhi.sensebox.relativehumidity.ui.RelativeHumidityFragment"
+        android:label="RelativeHumidityFragment" />
+    <fragment
+        android:id="@+id/rotationVectorFragment"
+        android:name="app.eccweizhi.sensebox.rotationvector.ui.RotationVectorFragment"
+        android:label="RotationVectorFragment" />
+    <fragment
+        android:id="@+id/temperatureFragment"
+        android:name="app.eccweizhi.sensebox.temperature.ui.TemperatureFragment"
+        android:label="TemperatureFragment" />
+</navigation>

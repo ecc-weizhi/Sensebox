@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Create a style AppTheme with parents set to Base.V0.AppTheme. The parent for -->
+    <!-- AppTheme will be the the base style for this file. -->
+    <style name="AppTheme" parent="appcore_AppTheme" />
+</resources>

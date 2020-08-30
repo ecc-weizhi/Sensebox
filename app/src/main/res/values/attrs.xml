@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NavigationItemView">
+        <attr name="navSelectedIconSrc" format="reference" />
+        <attr name="navUnselectedIconSrc" format="reference" />
+        <attr name="navText" format="reference|string" />
+        <attr name="navStateSelected" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gyroscope_display_name">Gyroscope</string>
+    <string name="gyroscope_raw_data_title">Raw data</string>
+    <string name="gyroscope_raw_data_subtitle">Rate of rotation around axis</string>
+    <string name="gyroscope_axis_x">x axis:</string>
+    <string name="gyroscope_axis_y">y axis:</string>
+    <string name="gyroscope_axis_z">z axis:</string>
+</resources>

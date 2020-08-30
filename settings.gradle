@@ -1,0 +1,3 @@
+include ':app', ':ambienttemperature', ':gravity', ':gyroscope', ':light', ':linearacceleration', ':magneticfield', ':orientation', ':pressure', ':proximity', ':relativehumidity', ':rotationvector', ':temperature',
+        ':accelerometer',
+        ':appcore'

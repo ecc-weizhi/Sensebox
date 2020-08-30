@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="appcore_AppTheme" parent="appcore_Base.V21.AppTheme" />
+
+    <style name="appcore_Base.V21.AppTheme" parent="appcore_Base.V19.AppTheme">
+        <!-- API 21 specific attributes -->
+    </style>
+</resources>

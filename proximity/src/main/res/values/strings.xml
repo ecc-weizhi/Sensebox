@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="proximity_display_name">Proximity</string>
+    <string name="proximity_raw_data_title">Raw data</string>
+    <string name="proximity_raw_data_subtitle">Distance from object</string>
+</resources>

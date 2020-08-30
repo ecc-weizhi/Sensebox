@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="relativehumidity_display_name">Relative Humidity</string>
+    <string name="relativehumidity_raw_data_title">Raw data</string>
+    <string name="relativehumidity_raw_data_subtitle">Ambient relative humidity</string>
+</resources>

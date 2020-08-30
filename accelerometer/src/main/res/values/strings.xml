@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accelerometer_display_name">Accelerometer</string>
+    <string name="accelerometer_raw_data_title">Raw data</string>
+    <string name="accelerometer_raw_data_subtitle">Acceleration along axis</string>
+    <string name="accelerometer_axis_x">x axis:</string>
+    <string name="accelerometer_axis_y">y axis:</string>
+    <string name="accelerometer_axis_z">z axis:</string>
+
+</resources>
